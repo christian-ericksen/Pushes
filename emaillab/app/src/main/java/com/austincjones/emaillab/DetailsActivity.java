@@ -13,7 +13,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         int itemPositionClickedAndSentFromList = intent.getIntExtra("POSITION", 0);
-        DetailsFragment detailsFragment = (DetailsFragment)getSupportFragmentManager().findFragmentById(R.id.detailsTextView);
-        detailsFragment.setDetailText(1);
+        DetailsFragment detailsFragment = (DetailsFragment)getSupportFragmentManager().findFragmentById(R.id.detailsFragment);
+        detailsFragment.setDetailText(itemPositionClickedAndSentFromList);
     }
 }

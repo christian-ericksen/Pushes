@@ -18,6 +18,7 @@ public class ListViewFragment extends ListFragment {
 
     ArrayList<MercuryEmail> mArrayFromApi;
     OnEmailSelectedListener mListener;
+    EmailArrayAdapter emailArrayAdapter;
 
     public interface OnEmailSelectedListener{
         public void onEmailSelected(int position);
@@ -47,7 +48,7 @@ public class ListViewFragment extends ListFragment {
         mArrayFromApi.add(johnny);
         mArrayFromApi.add(jimJohn);
 
-        EmailArrayAdapter emailArrayAdapter = new EmailArrayAdapter(getActivity(),mArrayFromApi);
+        emailArrayAdapter = new EmailArrayAdapter(getActivity(),mArrayFromApi);
         setListAdapter(emailArrayAdapter);
 
         return super.onCreateView(inflater, container, savedInstanceState);

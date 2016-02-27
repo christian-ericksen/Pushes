@@ -20,14 +20,13 @@ public class DetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         //Inflate based on the details_fragment_layout.xml class
-        return inflater.inflate(com.austincjones.emaillab.R.layout.detail_fragment_layout,container,false);
+        return inflater.inflate(R.layout.detail_fragment_layout,container,false);
     }
     // This method will receive a reference to the clicked email
     public void setDetailText(int position){
     // With position we will get specific email then place email values into the detail_fragment_layout
 //        Toast.makeText(getActivity(), "" + position, Toast.LENGTH_SHORT).show();
         TextView textView = (TextView)getView().findViewById(R.id.detailsTextView);
-        textView.setText("clicked on " + //Integer.toString
-        String.valueOf(position));
+        textView.setText("clicked on " + String.valueOf(position));
     }
 }
