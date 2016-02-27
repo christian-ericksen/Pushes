@@ -31,11 +31,11 @@ import java.util.ArrayList;
 
             // Replace the R.layout.email_item with custom layout
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View emailItemLayout = inflater.inflate(R.layout.email_item,parent,false);
+            View emailItemLayout = inflater.inflate(com.austincjones.emaillab.R.layout.email_item,parent,false);
 
             // Replace the textviews with the objects inside the custom layout
-            TextView nameTextView = (TextView)emailItemLayout.findViewById(R.id.item_name);
-            TextView infoTextView = (TextView)emailItemLayout.findViewById(R.id.item_info);
+            TextView nameTextView = (TextView)emailItemLayout.findViewById(com.austincjones.emaillab.R.id.item_name);
+            TextView infoTextView = (TextView)emailItemLayout.findViewById(com.austincjones.emaillab.R.id.item_info);
 
             MercuryEmail mercuryEmail = mArray.get(position);
 
