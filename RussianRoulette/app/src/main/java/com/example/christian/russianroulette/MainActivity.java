@@ -106,6 +106,8 @@ public class MainActivity extends AppCompatActivity {
 
             if (randomBarrel == 6) {chamber6Loaded = true;}
         }
+
+        
     }
 
 
