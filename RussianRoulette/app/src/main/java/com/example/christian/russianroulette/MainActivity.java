@@ -1,19 +1,17 @@
 package com.example.christian.russianroulette;
 
-import android.gesture.GestureOverlayView;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MotionEvent;
+import android.view.View;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-public class MainActivity extends AppCompatActivity implements GestureOverlayView.OnGestureListener{
-    String TAG = "kindly_fuck_off";
+public class MainActivity extends AppCompatActivity {
 
     ImageView chamber1;
     ImageView chamber2;
@@ -22,7 +20,11 @@ public class MainActivity extends AppCompatActivity implements GestureOverlayVie
     ImageView chamber5;
     ImageView chamber6;
     ImageView center;
-    RelativeLayout relativelo;
+    Button shoot;
+    Button spin;
+    //ImageView arrow;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,71 +38,84 @@ public class MainActivity extends AppCompatActivity implements GestureOverlayVie
         chamber5 = (ImageView) findViewById(R.id.chamber5);
         chamber6 = (ImageView) findViewById(R.id.chamber6);
         center = (ImageView) findViewById(R.id.center);
+        shoot = (Button) findViewById(R.id.shoot);
+        spin = (Button) findViewById(R.id.spin);
+        //arrow = (ImageView) findViewById(R.id.arrow);
+        final RelativeLayout relativeLayoutCylinder = (RelativeLayout) findViewById(R.id.relative_layout_cylinder);
 
 
-        final Animation animRotate = AnimationUtils.loadAnimation(this, R.anim.rotate);
 
-        animRotate.setAnimationListener(new Animation.AnimationListener() {
+       final RotateAnimation rotate1 = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        //RotateAnimation rotate = new RotateAnimation(0, 360, 90, 90);
+        rotate1.setDuration(1000);
+        rotate1.setInterpolator(new LinearInterpolator());
+
+       final RotateAnimation rotate2 = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        rotate2.setDuration(3000);
+        rotate2.setInterpolator(new DecelerateInterpolator());
+
+
+
+        chamber1= (ImageView) findViewById(R.id.chamber1);
+        chamber2 = (ImageView) findViewById(R.id.chamber2);
+        chamber3 = (ImageView) findViewById(R.id.chamber3);
+        chamber4 = (ImageView) findViewById(R.id.chamber4);
+        chamber5 = (ImageView) findViewById(R.id.chamber5);
+        chamber6 = (ImageView) findViewById(R.id.chamber6);
+
+        relativeLayoutCylinder.setPivotX(relativeLayoutCylinder.getWidth() / 2);
+        relativeLayoutCylinder.setPivotY(relativeLayoutCylinder.getHeight() / 2);
+
+
+        spin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onAnimationStart(Animation animation) {
+            public void onClick(View v) {
+                relativeLayoutCylinder.startAnimation(rotate1);
+                relativeLayoutCylinder.startAnimation(rotate2);
 
 
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation rotate) {
+//                chamber1.startAnimation(rotate);
+//                chamber2.startAnimation(rotate);
+//                chamber3.startAnimation(rotate);
+//                chamber4.startAnimation(rotate);
+//                chamber5.startAnimation(rotate);
+//                chamber6.startAnimation(rotate);
 
             }
         });
 
-    }
+        shoot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
 
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+//        final Animation animRotate = AnimationUtils.loadAnimation(this, R.anim.rotate);
+//        chamber1.startAnimation(animRotate);
+//        chamber1.setPivotX(0);
+//        chamber1.setPivotY(0);
+//
+//        animRotate.setAnimationListener(new Animation.AnimationListener() {
+//            @Override
+//            public void onAnimationStart(Animation animation) {
+//                chamber1.getPivotX();
+//                chamber1.getPivotY();
+//
+//            }
+//
+//            @Override
+//            public void onAnimationEnd(Animation animation) {
+//
+//            }
+//
+//            @Override
+//            public void onAnimationRepeat(Animation rotate) {
+//
+//            }
+//        });
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onGestureStarted(GestureOverlayView overlay, MotionEvent event) {
-        Log.d(TAG, "onGestureStarted: " + overlay );
-    }
-
-    @Override
-    public void onGesture(GestureOverlayView overlay, MotionEvent event) {
-        Log.d("fuck_you", "onGestureStarted: " + overlay );
-    }
-
-    @Override
-    public void onGestureEnded(GestureOverlayView overlay, MotionEvent event) {
-        Log.d("fuck_you_2", "onGestureStarted: " + overlay );
-    }
-
-    @Override
-    public void onGestureCancelled(GestureOverlayView overlay, MotionEvent event) {
-        Log.d("fuck_you_3", "onGestureStarted: " + overlay );
     }
 }
