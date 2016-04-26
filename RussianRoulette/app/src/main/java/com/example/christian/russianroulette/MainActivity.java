@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 import java.util.Random;
 
 
+@SuppressWarnings("ResultOfMethodCallIgnored")
 public class MainActivity extends AppCompatActivity {
 
     ImageView chamber1;
@@ -26,6 +27,49 @@ public class MainActivity extends AppCompatActivity {
     Button shoot;
     Button spin;
     //ImageView arrow;
+
+     public class randomSpinDegrees{}{
+        Random rand = new Random();
+        int mDegree = rand.nextInt(7 - 1) + 1;
+        String n = "";
+
+        if(mDegree == 1) {
+            n.equals("360");
+            }
+
+
+        //chamber2Loaded = false; chamber3Loaded = false; chamber4Loaded = false; chamber5Loaded = false; chamber6Loaded = false;
+
+        if(mDegree == 2){
+            n.equals("420");
+
+        }
+
+        if(mDegree == 3)
+        {
+            n.equals("480");
+        }
+
+        if(mDegree == 4)
+        {
+            n.equals("540");
+        }
+
+        if(mDegree==5)
+
+        {
+            n.equals("600");
+        }
+
+        if(mDegree==6)
+
+        {
+            n.equals("660");
+        }
+
+        float floater = Float.parseFloat(n);
+        System.out.println(floater);
+    }
 
     public static class fire {
 
@@ -44,45 +88,23 @@ public class MainActivity extends AppCompatActivity {
             boolean chamber6Full;
             boolean chamber6Loaded = false;
 
-            Random whichBarrel = new Random();
-            int randomBarrel = whichBarrel.nextInt(7 - 1) + 1;
-            int barrel;
-            switch (randomBarrel) {
-                case 0:
-                    barrel = 1;
-                    break;
-                case 1:
-                    barrel = 2;
-                    break;
-                case 2:
-                    barrel = 3;
-                    break;
-                case 3:
-                    barrel = 4;
-                    break;
-                case 4:
-                    barrel = 5;
-                    break;
-                case 5:
-                    barrel = 6;
-                    break;
-                default:
-                    barrel = 6;
-            }
+            Random  rand = new Random();
+            int randomBarrel = rand.nextInt(7 - 1) + 1;
 
-            if (barrel == 1) {chamber1Loaded = true;}
+
+            if (randomBarrel == 1) {chamber1Loaded = true;}
 
             //chamber2Loaded = false; chamber3Loaded = false; chamber4Loaded = false; chamber5Loaded = false; chamber6Loaded = false;
 
-            if (barrel == 2) {chamber2Loaded = true;}
+            if (randomBarrel == 2) {chamber2Loaded = true;}
 
-            if (barrel == 3) {chamber3Loaded = true;}
+            if (randomBarrel == 3) {chamber3Loaded = true;}
 
-            if (barrel == 4) {chamber4Loaded = true;}
+            if (randomBarrel == 4) {chamber4Loaded = true;}
 
-            if (barrel == 5) {chamber5Loaded = true;}
+            if (randomBarrel == 5) {chamber5Loaded = true;}
 
-            if (barrel == 6) {chamber6Loaded = true;}
+            if (randomBarrel == 6) {chamber6Loaded = true;}
         }
     }
 
@@ -108,21 +130,19 @@ public class MainActivity extends AppCompatActivity {
 
         final RelativeLayout relativeLayoutCylinder = (RelativeLayout) findViewById(R.id.relative_layout_cylinder);
 
-       final RotateAnimation rotate1 = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-        //RotateAnimation rotate = new RotateAnimation(0, 360, 90, 90);
-        rotate1.setDuration(1000);
-        rotate1.setInterpolator(new LinearInterpolator());
 
-       final RotateAnimation rotate2 = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-        rotate2.setDuration(3000);
-        rotate2.setInterpolator(new DecelerateInterpolator());
+//        final RotateAnimation rotate1 = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+//        //RotateAnimation rotate = new RotateAnimation(0, 360, 90, 90);
+//        rotate1.setDuration(1000);
+//        rotate1.setInterpolator(new LinearInterpolator());
+//
+//       final RotateAnimation rotate2 = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+//        rotate2.setDuration(3000);
+//        rotate2.setInterpolator(new DecelerateInterpolator());
 
-        relativeLayoutCylinder.setPivotX(relativeLayoutCylinder.getWidth() / 2);
-        relativeLayoutCylinder.setPivotY(relativeLayoutCylinder.getHeight() / 2);
+
 
         //randomSpinDegrees degreesClass = new randomSpinDegrees();
-
-
 
 
 
@@ -130,41 +150,66 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                class randomSpinDegrees {
 
-                    // Random randomSpin = new Random();
-                    //int randomDegrees = randomSpin.nextInt(7 - 1) + 1;
+//
+//                    int randomDegrees = (int)(Math.random()*6 + 1);
+//                    String degrees = "";
+//
+//                    float n;
+//
+//
+//                    // Random randomSpin = new Random();
+//                    //int randomDegrees = randomSpin.nextInt(7 - 1) + 1;
+//
+//                    public void main(String[] args) {
+//
+//                        for (int i = 0; i <= 6; i++){
+//
+//                            switch (randomDegrees) {
+//                                case 0:
+//                                    degrees = "420";
+//                                    break;
+//                                case 1:
+//                                    degrees = "480";
+//                                    break;
+//                                case 2:
+//                                    degrees = "540";
+//                                    break;
+//                                case 3:
+//                                    degrees = "600";
+//                                    break;
+//                                case 4:
+//                                    degrees = "660";
+//                                    break;
+//                                case 5:
+//                                    degrees = "720";
+//                                    break;
+//                                default:
+//                                    degrees = "0";
+//                            }
+//                        }
+//                        float n = Float.parseFloat(degrees);
+//                        System.out.print(n);
 
-                    public void main(String[] args){
 
-                        Random randomSpin = new Random();
-                        int randomDegrees = randomSpin.nextInt(7 - 1) + 1;
-                        int degrees;
-                        switch (randomDegrees) {
-                            case 0: degrees = 420;
-                                break;
-                            case 1: degrees = 480;
-                                break;
-                            case 2: degrees = 540;
-                                break;
-                            case 3: degrees = 600;
-                                break;
-                            case 4: degrees = 660;
-                                break;
-                            case 5: degrees = 720;
-                                break;
-                            default: degrees = 0;
-                        }
-                        System.out.println(degrees);
+                final RotateAnimation rotate1 = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+                        //RotateAnimation rotate = new RotateAnimation(0, 360, 90, 90);
+                        rotate1.setDuration(1000);
+                        rotate1.setInterpolator(new LinearInterpolator());
+
+                        final RotateAnimation rotate2 = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+                        rotate2.setDuration(3000);
+                        rotate2.setInterpolator(new DecelerateInterpolator());
+
+                        assert relativeLayoutCylinder != null;
+                        relativeLayoutCylinder.startAnimation(rotate1);
+                        relativeLayoutCylinder.startAnimation(rotate2);
+                        relativeLayoutCylinder.setPivotX(relativeLayoutCylinder.getWidth() / 2);
+                        relativeLayoutCylinder.setPivotY(relativeLayoutCylinder.getHeight() / 2);
                     }
 
-                }
 
-
-
-
-                relativeLayoutCylinder.startAnimation(rotate1);
-                relativeLayoutCylinder.startAnimation(rotate2);
+                });
 
 
                 //chambe
@@ -174,13 +219,26 @@ public class MainActivity extends AppCompatActivity {
 //                chamber5.startAnimation(rotate);
 //                chamber6.startAnimation(rotate);
 
-            }
-        });
+
 
         shoot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boolean chamber1Full;
+                boolean chamber1Loaded;
+                boolean chamber2Full;
+                boolean chamber2Loaded;
+                boolean chamber3Full;
+                boolean chamber3Loaded;
+                boolean chamber4Full;
+                boolean chamber4Loaded;
+                boolean chamber5Full;
+                boolean chamber5Loaded;
+                boolean chamber6Full;
+                boolean chamber6Loaded;
 
+
+                if (chamber1Loaded = true);
 
 
 

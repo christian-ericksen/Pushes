@@ -1,36 +1,41 @@
-package com.example.christian.russianroulette;
-
-import java.util.Random;
-
-/**
- * Created by Christian on 4/25/16.
- */
- public class randomSpinDegrees {
-
-   // Random randomSpin = new Random();
-    //int randomDegrees = randomSpin.nextInt(7 - 1) + 1;
-
-    public static void main(String[] args){
-
-        Random randomSpin = new Random();
-        int randomDegrees = randomSpin.nextInt(7 - 1) + 1;
-        int degrees;
-        switch (randomDegrees) {
-            case 0: degrees = 60;
-                break;
-            case 1: degrees = 120;
-                break;
-            case 2: degrees = 180;
-                break;
-            case 3: degrees = 240;
-                break;
-            case 4: degrees = 300;
-                break;
-            case 5: degrees = 360;
-                break;
-            default: degrees = 0;
-        }
-        System.out.println(degrees);
-    }
-
-    }
+//package com.example.christian.russianroulette;
+//
+//import java.util.Random;
+//
+///**
+// * Created by Christian on 4/25/16.
+// */
+// public class randomSpinDegrees {
+//
+//    Random rand = new Random();
+//
+//        int randomDegrees = rand.nextInt(7 - 1) + 1;
+//    public void main(String[] args) {
+//
+//        for (int i = 0; i <= 6; i++){
+//
+//            switch (randomDegrees) {
+//                case 0:
+//                    degrees = "420";
+//                    break;
+//                case 1:
+//                    degrees = "480";
+//                    break;
+//                case 2:
+//                    degrees = "540";
+//                    break;
+//                case 3:
+//                    degrees = "600";
+//                    break;
+//                case 4:
+//                    degrees = "660";
+//                    break;
+//                case 5:
+//                    degrees = "720";
+//                    break;
+//                default:
+//                    degrees = "0";
+//            }
+//        }
+//        float n = Float.parseFloat(degrees);
+//        System.out.print(n);
