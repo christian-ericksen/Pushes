@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Created by Christian on 4/25/16.
  */
-public class randomSpinDegrees extends MainActivity {
+ public class randomSpinDegrees {
 
    // Random randomSpin = new Random();
     //int randomDegrees = randomSpin.nextInt(7 - 1) + 1;
@@ -14,7 +14,7 @@ public class randomSpinDegrees extends MainActivity {
 
         Random randomSpin = new Random();
         int randomDegrees = randomSpin.nextInt(7 - 1) + 1;
-        Integer degrees;
+        int degrees;
         switch (randomDegrees) {
             case 0: degrees = 60;
                 break;
