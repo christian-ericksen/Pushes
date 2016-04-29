@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # MercuryMail
 =======
 ---
@@ -70,3 +71,7 @@ A few screenshots of the Gmail app:
 
 * [Google's Gmail API - https://developers.google.com/gmail/api](https://developers.google.com/gmail/api/)
 >>>>>>> c13e7e2f30c9ab2c2af3fc2897000dffaf94d4e5
+=======
+# RussianRoulette
+Russian Roulette Drinking Game
+>>>>>>> 38e8f0bbf849390b38cf6ce5f157465d89facd19

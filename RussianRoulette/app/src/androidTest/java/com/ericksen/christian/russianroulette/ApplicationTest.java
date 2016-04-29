@@ -1,4 +1,4 @@
-package com.example.christian.russianroulette;
+package com.ericksen.christian.russianroulette;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
